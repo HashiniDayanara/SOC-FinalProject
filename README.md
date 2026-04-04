@@ -108,6 +108,7 @@ make clean_all exe
 ## Installing Program into ROM Memeory 
 
 1. Using the GUI, make sure to select these options:
+
 ![Boot Config](./images/boot_config.png)
 
 ![Mem Config](./images/mem_config.png)

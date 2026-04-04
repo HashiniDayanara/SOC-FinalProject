@@ -109,6 +109,7 @@ make clean_all exe
 
 1. Using the GUI, make sure to select these options:
 ![Boot Config](./images/boot_config.png)
+
 ![Mem Config](./images/mem_config.png)
 
 2. Regenerate and re-install the default IMEM initialization file so that it contains the image of your actual application firmware. Run this command from your application directory

@@ -8,6 +8,10 @@ set_property CFGBVS VCCO [current_design]
 set_property CONFIG_VOLTAGE 3.3 [current_design]
 set_property BITSTREAM.Config.SPI_buswidth 4 [current_design]
 
+set_property SEVERITY {warning} [get_drc_checks LUTLP-1]
+set_property IS_ENABLED FALSE [get_drc_checks LUTLP-1]
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE
+
 # On-board Slide Switches
 set_property -dict {PACKAGE_PIN G1 IOSTANDARD LVCMOS25} [get_ports {gpio_i_0[4]}]
 set_property -dict {PACKAGE_PIN F2 IOSTANDARD LVCMOS25} [get_ports {gpio_i_0[5]}]

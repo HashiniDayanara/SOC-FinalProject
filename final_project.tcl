@@ -207,10 +207,15 @@ proc create_root_design { parentCell } {
   # Create instance: neorv32_vivado_ip_0, and set properties
   set neorv32_vivado_ip_0 [ create_bd_cell -type ip -vlnv NEORV32:user:neorv32_vivado_ip:1.0 neorv32_vivado_ip_0 ]
   set_property -dict [list \
+    CONFIG.BOOT_MODE_SELECT {2} \
+    CONFIG.DMEM_EN {true} \
     CONFIG.DUAL_CORE_EN {true} \
+    CONFIG.IMEM_EN {true} \
+    CONFIG.IO_GPIO_DIR_EN {false} \
     CONFIG.IO_GPIO_EN {true} \
     CONFIG.IO_GPIO_IN_NUM {8} \
     CONFIG.IO_GPIO_OUT_NUM {8} \
+    CONFIG.IO_NEOLED_EN {false} \
     CONFIG.IO_SPI_EN {true} \
     CONFIG.IO_SPI_FIFO {256} \
     CONFIG.IO_UART0_EN {true} \
@@ -227,6 +232,11 @@ proc create_root_design { parentCell } {
 
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
+  set_property -dict [list \
+    CONFIG.RESET_PORT {resetn} \
+    CONFIG.RESET_TYPE {ACTIVE_LOW} \
+  ] $clk_wiz_0
+
 
   # Create port connections
   connect_bd_net -net clk_in1_0_1  [get_bd_ports clk_100MHz] \
@@ -245,8 +255,8 @@ proc create_root_design { parentCell } {
   connect_bd_net -net proc_sys_reset_0_peripheral_aresetn  [get_bd_pins proc_sys_reset_0/peripheral_aresetn] \
   [get_bd_pins neorv32_vivado_ip_0/resetn]
   connect_bd_net -net resetn_0_1  [get_bd_ports resetn_0] \
-  [get_bd_pins clk_wiz_0/reset] \
-  [get_bd_pins proc_sys_reset_0/ext_reset_in]
+  [get_bd_pins proc_sys_reset_0/ext_reset_in] \
+  [get_bd_pins clk_wiz_0/resetn]
   connect_bd_net -net uart0_rxd_i_0_1  [get_bd_ports uart0_rxd_i_0] \
   [get_bd_pins neorv32_vivado_ip_0/uart0_rxd_i]
 

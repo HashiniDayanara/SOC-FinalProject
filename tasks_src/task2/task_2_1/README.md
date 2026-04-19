@@ -54,6 +54,8 @@ task2/task_2_1/
   - Add ``` task_2_1/ip_repo``` and rebuilt neorv32 IP to user repository
   - Run ``` source task2_1/hw/FP_task2_1_bd_new.tcl ``` to create board design
   - create Bitstream using provided xcd file
+    ![final Board Design](docs/Results/task2-1_bd.png)
+    
 ## 2. Software
 - copy ``` task_2_1/sw/main.c``` and ```task_2_1/hw/neorv32-main``` to where the toolchain has been installed.
 - Edit makefile as necessory

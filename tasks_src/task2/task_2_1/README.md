@@ -1,7 +1,7 @@
 # Task 2-1 Pong game on NEORV32 Processor
-## Overview
+## 🚀 Overview
 This project implements a two-player Pong game on the Urbana board using the NEORV32 soft-core processor. 
-## System Architecture
+## ⚙️ System Architecture
 
 The system consists of the following components:
 
@@ -21,7 +21,8 @@ The system consists of the following components:
 
 - **GPIO Interface**
   - Provides real-time user input for both players
-## Task directory Structure
+  
+## 🧱 Task directory Structure
 
 ```plaintext
 task2/task_2_1/
@@ -77,4 +78,6 @@ task2/task_2_1/
 - Use GPIO push buttons for paddle control
 - Game starts automatically after configuration
 
+## 📌 Final Status
 
+The Pong game has been successfully implemented using the NEORV32 processor. All components, including the Pong IP, VGA output, and GPIO input, are fully integrated and operational.

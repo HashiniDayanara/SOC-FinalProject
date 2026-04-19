@@ -27,6 +27,8 @@ The system consists of the following components:
 task2/task_2_1/
 ├── docs/
 │   └── results/
+│       ├── UART.png                 # UART Validation of game state 
+│       ├── task2-1_bd.png           # vivado board design layout
 │       └── design_1_wrapper.bit     # bitstream
 │
 ├── hw/
